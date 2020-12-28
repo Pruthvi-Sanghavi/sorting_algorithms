@@ -1,2 +1,2 @@
 # SortingAlgoVisualizer
-Visualization of the sorting algorithms #sorting
+Visualization of the sorting algorithms.
