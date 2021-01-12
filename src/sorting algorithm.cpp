@@ -41,6 +41,32 @@ vector <int> insertion_sort(vector <int> unsorted) {
 
 }
 
+/* Cocktail Shaker Sort Algorithm */
+vector <int> cocktail_sort(vector <int> unsorted) {
+
+    return unsorted;
+}
+
+/* Gnome Sort Algorithm */
+vector <int> gnome_sort(vector <int> unsorted) {
+    int pos = 0;
+    while (pos < unsorted.size()) {
+        if (pos == 0 || unsorted[pos] >= unsorted[pos - 1]) {
+            pos = pos + 1;
+        }
+        else
+        {
+            p = unsorted[pos];
+            unsorted[pos] = unsorted[pos - 1];
+            unsorted[pos - 1] = p;
+            pos = pos - 1;
+        }
+    }
+    return unsorted;
+}
+
+
+
 /* Print the vector */
 void print(vector <int> sorted) {
     for (int i = 0; i < sorted.size(); i++) {
@@ -48,6 +74,7 @@ void print(vector <int> sorted) {
         cout << " ";
     }
 }
+
 
 
 int main()
@@ -66,6 +93,16 @@ int main()
     case '2':
         result = insertion_sort(list);
         cout << "Using Insertion Sort"<< endl;
+        break;
+
+    case '3':
+        result = cocktail_sort(list);
+        cout << "Using Cocktail Shaker Sort" << endl;
+        break;
+
+    case '4':
+        result = gnome_sort(list);
+        cout << "Using Gnome Sort" << endl;
         break;
 
     default:
