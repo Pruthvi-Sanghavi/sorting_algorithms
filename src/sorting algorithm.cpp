@@ -1,5 +1,9 @@
-// sorting algorithm.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+ *@file sorting algorithm.cpp
+ *@author Pruthvi Sanghavi
+ *@brief various sorting algorithms
+ *@copyright 2021 Pruthvi Sanghavi
+*/
 
 #include <iostream>
 #include <vector>
@@ -9,6 +13,7 @@ using namespace std;
 
 vector <int> result;
 int p;
+
 
 /* Bubble Sort Algorithm */
 vector <int> bubble_sort(vector <int> unsorted) {
@@ -65,6 +70,24 @@ vector <int> gnome_sort(vector <int> unsorted) {
     return unsorted;
 }
 
+/* Selection Sort Algorithm */
+vector <int> selection_sort(vector <int> unsorted) {
+
+    return unsorted;
+}
+
+/* return min(array) */
+int min(vector <int> unsorted) {
+    int itr = 0;
+    p = unsorted[0];
+    for (int i = 0; i < unsorted.size(); i++) {
+        if (unsorted[i] < p) {
+            p = unsorted[i];
+       
+        }
+    }
+    return p;
+}
 
 
 /* Print the vector */
@@ -82,7 +105,7 @@ int main()
     char n;
     cout << "Enter the choice: ";
     cin >> n;
-    vector <int> list = {10,6,4,1,3,8,2,5,25,35,42,100,10,6,58};
+    vector <int> list = {56,65,5};
 
     switch (n)
     {
@@ -111,6 +134,7 @@ int main()
     }
     
     print(result);
+   
 
 }
 
