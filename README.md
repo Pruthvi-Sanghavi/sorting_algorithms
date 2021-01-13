@@ -1,5 +1,6 @@
 # sorting_algorithms
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Implementation of various sorting algorithms in c++11.
 ### TODO Algorithms
 1. [x] Bubble Sort
