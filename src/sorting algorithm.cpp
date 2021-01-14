@@ -9,6 +9,7 @@
 #include <vector>
 #include <time.h>
 
+
 using namespace std;
 
 vector <int> result;
@@ -76,6 +77,31 @@ vector <int> selection_sort(vector <int> unsorted) {
     return unsorted;
 }
 
+/* Merge Sort Algorithm */
+vector <int> merge_sort(vector <int> unsorted) {
+    vector <int> sorted;
+    p = unsorted[unsorted.size() / 2];
+
+    
+    return sorted;
+}
+
+/* Split function */
+vector <int> split(vector <int> unsorted) {
+    vector <int> firsthalf;
+    vector <int> secondhalf;
+    for (int i = 0; i < unsorted.size()/2; i++) {
+        firsthalf.push_back(unsorted[i]);
+     
+    }
+    for (int j = unsorted.size()/2 + 1; j < unsorted.size() - 1; j++) {
+        secondhalf.push_back(unsorted[j]);
+    }
+    
+    return firsthalf, secondhalf;
+
+}
+
 /* return min(array) */
 int min(vector <int> unsorted) {
     int itr = 0;
@@ -91,9 +117,9 @@ int min(vector <int> unsorted) {
 
 
 /* Print the vector */
-void print(vector <int> sorted) {
-    for (int i = 0; i < sorted.size(); i++) {
-        cout <<sorted[i];
+void print(vector <int> array) {
+    for (int i = 0; i < array.size(); i++) {
+        cout <<array[i];
         cout << " ";
     }
 }
@@ -105,7 +131,7 @@ int main()
     char n;
     cout << "Enter the choice: ";
     cin >> n;
-    vector <int> list = {56,65,5};
+    vector <int> list = {56,65,5,1,};
 
     switch (n)
     {
@@ -128,13 +154,13 @@ int main()
         cout << "Using Gnome Sort" << endl;
         break;
 
+
     default:
         cout << "invalid";
-
     }
     
     print(result);
-   
 
+    
 }
 
