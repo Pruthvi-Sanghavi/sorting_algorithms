@@ -10,12 +10,12 @@ vector <int> result;
 
 /* Bubble Sort Algorithm */
 vector <int> bubble_sort(vector <int> unsorted) {
-    for(int j = 0;j <= unsorted.size();j++){
+    for(int j = 0;j <= 5;j++){
         for (int i = 1; i < unsorted.size(); i++) {
-            if (unsorted[i - 1] > unsorted[i])
+            if (unsorted[i-1] > unsorted[i])
             {
-                p = unsorted[i - 1];
-                unsorted[i - 1] = unsorted[i];
+                p = unsorted[i-1];
+                unsorted[i-1] = unsorted[i];
                 unsorted[i] = p;
             }
         }
@@ -41,7 +41,24 @@ vector <int> insertion_sort(vector <int> unsorted) {
 
 /* Cocktail Shaker Sort Algorithm */
 vector <int> cocktail_sort(vector <int> unsorted) {
+    int q = 0;
+    for (int i = 0; i <= 5; i++) {
+        for (int j = 1 ; j < unsorted.size(); j++) {
+            if (unsorted[j - 1] > unsorted[j]) {
+                p = unsorted[j - 1];
+                unsorted[j - 1] = unsorted[j];
+                unsorted[j] = p;
+            }
+        }
 
+        for (int k = unsorted.size() - 1; k < 0; k--) {
+            if (unsorted[k - 1] > unsorted[k]) {
+                q = unsorted[k - 1];
+                unsorted[k - 1] = unsorted[k];
+                unsorted[k] = q;
+            }
+        }
+    }
     return unsorted;
 }
 
@@ -72,9 +89,12 @@ vector <int> selection_sort(vector <int> unsorted) {
 /* Merge Sort Algorithm */
 vector <int> merge_sort(vector <int> unsorted) {
     vector <int> sorted;
+    int q;
     firsthalf, secondhalf = split(unsorted);
-    p = unsorted[unsorted.size() / 2];
+    for (int i = 0; i < firsthalf.size(); i++) {
+         
 
+    }
     
     return sorted;
 }
@@ -85,7 +105,7 @@ int main()
     char n;
     cout << "Enter the choice: ";
     cin >> n;
-    vector <int> list = {56,65,5,1,};
+    vector <int> list = {3,4,6,8,1,5,2,7};
 
     switch (n)
     {
@@ -108,13 +128,22 @@ int main()
         cout << "Using Gnome Sort" << endl;
         break;
 
+    case '5':
+        result = merge_sort(list);
+        cout << "Using Merge Sort" << endl;
+        break;
+
+    case '6':
+        firsthalf, secondhalf = split(list);
+        break;
+
 
     default:
         cout << "invalid";
     }
     
     print(result);
-
+    //print(firsthalf);
     
 }
 
