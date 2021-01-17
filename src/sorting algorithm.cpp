@@ -82,7 +82,21 @@ vector <int> gnome_sort(vector <int> unsorted) {
 
 /* Selection Sort Algorithm */
 vector <int> selection_sort(vector <int> unsorted) {
-
+    int minitr = 0;
+    for (int i = 0; i < unsorted.size(); i++) {
+        minitr = i;
+        for (int j = i + 1; j < unsorted.size(); j++) {
+            if (unsorted[j] < unsorted[minitr]) {
+                minitr = j;
+            }
+        }
+        if (minitr != i) {
+            p = unsorted[minitr];
+            unsorted[minitr] = unsorted[i];
+            unsorted[i] = p;
+            
+        }
+    }
     return unsorted;
 }
 
@@ -135,6 +149,11 @@ int main()
 
     case '6':
         firsthalf, secondhalf = split(list);
+        break;
+
+    case '7':
+        result = selection_sort(list);
+        cout << " Using Selection Sort" << endl;
         break;
 
 
