@@ -7,7 +7,7 @@ Implementation of various sorting algorithms in c++11.
 2. [x] Insertion Sort
 3. [x] Gnome Sort
 4. [x] Cocktail Shaker Sort
-5. [ ] Selection Sort
+5. [x] Selection Sort
 6. [ ] Merge Sort
 7. [ ] Quick Sort
 8. [ ] Radix Sort
