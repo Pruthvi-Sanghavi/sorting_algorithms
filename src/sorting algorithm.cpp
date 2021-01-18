@@ -100,17 +100,25 @@ vector <int> selection_sort(vector <int> unsorted) {
     return unsorted;
 }
 
-/* Merge Sort Algorithm */
-vector <int> merge_sort(vector <int> unsorted) {
-    vector <int> sorted;
-    int q;
-    firsthalf, secondhalf = split(unsorted);
-    for (int i = 0; i < firsthalf.size(); i++) {
-         
-
+/* Quick Sort Algorithm */
+vector <int> quick_sort(vector <int> unsorted) {
+    int q = 0;
+    int pivot = unsorted[unsorted.size() - 1];
+    int low = 0;
+    int high = unsorted.size() - 1;
+    int i = low - 1;
+    for (int j = low; j < unsorted.size(); j++) {
+        if (unsorted[j] < pivot) {
+            i++;
+            p = unsorted[i];
+            unsorted[i] = unsorted[j];
+            unsorted[j] = p;
+        }
     }
-    
-    return sorted;
+    q = unsorted[i + 1];
+    unsorted[i + 1] = unsorted[high];
+    unsorted[high] = q;
+    return unsorted;
 }
 
 
@@ -119,7 +127,7 @@ int main()
     char n;
     cout << "Enter the choice: ";
     cin >> n;
-    vector <int> list = {3,4,6,8,1,5,2,7};
+    vector <int> list = {10,80,30,90,40,50,70};
 
     switch (n)
     {
@@ -143,8 +151,8 @@ int main()
         break;
 
     case '5':
-        result = merge_sort(list);
-        cout << "Using Merge Sort" << endl;
+        result = quick_sort(list);
+        cout << "Using Quick Sort" << endl;
         break;
 
     case '6':
@@ -156,13 +164,13 @@ int main()
         cout << " Using Selection Sort" << endl;
         break;
 
-
     default:
         cout << "invalid";
     }
     
     print(result);
     //print(firsthalf);
+
     
 }
 
