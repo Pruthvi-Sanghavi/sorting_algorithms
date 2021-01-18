@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 vector <int> firsthalf;
@@ -25,7 +26,6 @@ vector <int> split(vector <int> unsorted) {
 
 /* return min(array) */
 int min(vector <int> unsorted) {
-    int itr = 0;
     p = unsorted[0];
     for (int i = 0; i < unsorted.size(); i++) {
         if (unsorted[i] < p) {
@@ -42,4 +42,14 @@ void print(vector <int> array) {
         cout << array[i];
         cout << " ";
     }
+}
+
+/* Input function */
+vector <int> input() {
+    char c;
+    vector <int> list;
+    cout << "Enter the numbers separated by commas";
+    cin >> c;
+    list.push_back(c);
+    return list;
 }
